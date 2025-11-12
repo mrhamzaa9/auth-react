@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Sign() {
     const [form, setForm] = useState({
@@ -83,10 +83,11 @@ export default function Sign() {
                 />
                 <button
                     type="submit"
-                    className="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition-colors"
+                    className="w-full bg-blue-500 text-white p-2 rounded-2xl hover:bg-blue-600 transition-colors"
                 >
                     Register
                 </button>
+                   <Link to='/login' className="text-blue-500">Login</Link>
             </form>
         </div>
     );

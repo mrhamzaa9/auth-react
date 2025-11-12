@@ -1,11 +1,17 @@
 import React from "react"
-import Sign from "./pages/Sign"
-import Login from "./pages/Login"
+import UserLayout from "./layout/UserLayout"
+import ProtectedRoute from "./routes/ProtectedRoute"
+import AdminLayout from "./layout/AdminLayout"
+import PublicRoute from "./routes/Publicroute"
+
 function App() {
   return (
     <>
-  <Sign/>
-  <Login/>
+
+        <PublicRoute/>
+      {/* <ProtectedRoute/> */}
+      {/* <UserLayout/>
+   <AdminLayout/>  */}
     </>
   )
 }

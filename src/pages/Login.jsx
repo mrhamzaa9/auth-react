@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Login() {
@@ -28,11 +28,12 @@ export default function Login() {
             localStorage.setItem("role", decoded.role);
             localStorage.setItem("userId", decoded.id);
 
-            if (decoded.role === "admin") navigate("/admin/dashboard");
-            else navigate("/user/dashboard");
+            if (decoded.role === "admin") navigate("/adminhome");
+            else navigate("/userhome");
         } else {
             alert(data.message || "Login failed");
         }
+        
     };
 
     return (
@@ -49,6 +50,7 @@ export default function Login() {
                     onChange={handleChange}
                 />
                 <button className="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition-colors" type="submit">Login</button>
+                <Link to='/sign' className="text-blue-500">Sign UP</Link>
             </form>
         </div>
     );
