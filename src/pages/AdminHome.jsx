@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function AdminHome() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/user/`, { credentials: "include" })
+    fetch(`http://localhost:3000/user/get`, { credentials: "include" , method: "GET"})
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
@@ -17,6 +18,7 @@ export default function AdminHome() {
 
   return (
     <div>
+       <Link to='/userhome' className="text-blue-500">User dash</Link>
       <h2>Admin Dashboard</h2>
       <ul>
         {users.map((u) => (

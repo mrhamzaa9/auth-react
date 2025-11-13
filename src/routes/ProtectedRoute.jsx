@@ -1,15 +1,29 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
 
-export default function ProtectedRoute({ children, allowedRoles }) {
-  const token = localStorage.getItem("token");
-  const role = localStorage.getItem("role");
+import React from 'react'
 
-  if (!token) return <Navigate to="/login" />;
-  if (allowedRoles && !allowedRoles.includes(role))
-    return <Navigate to="/sign" />;
+import AdminHome from '../pages/AdminHome'
+import Userhome from '../pages/Userhome'
+import { Route, Routes } from 'react-router-dom'
 
-  return children;
+function ProtectedRoute () {
+  const routes = <>
+      <Route path="/adminhome" element={<AdminHome />} />
+      <Route path="/userhome" element={<Userhome />} />
+        <Route path='*'
+            element={
+                <Navigate to={"/"} />
+            } />
+    </>
+  return (
+    <>
+
+      <Routes>
+        {routes}
+      </Routes>
+
+    </>
+  )
 }
 
+export default ProtectedRoute
 

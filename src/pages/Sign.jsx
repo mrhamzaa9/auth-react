@@ -14,7 +14,7 @@ export default function Sign() {
         setForm({ ...form, [e.target.name]: e.target.value });
 
     async function handleSubmit(e) {
-        // e.preventDefault();
+        e.preventDefault();
         try {
             const res = await fetch("http://localhost:3000/user/sign", {
                 method: "POST",
@@ -34,7 +34,7 @@ export default function Sign() {
             const data = await res.json();
             console.log("Response:", data);
 
-            navigate("/login");
+            navigate("/");
         } catch (error) {
             console.error("Fetch error:", error);
         }
@@ -87,7 +87,7 @@ export default function Sign() {
                 >
                     Register
                 </button>
-                   <Link to='/login' className="text-blue-500">Login</Link>
+                   <Link to='/' className="text-blue-500">Login</Link>
             </form>
         </div>
     );

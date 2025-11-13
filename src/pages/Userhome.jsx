@@ -5,7 +5,7 @@ export default function Userhome() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/user/`, { credentials: "include" })
+    fetch("http://localhost:3000/user/get/", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
