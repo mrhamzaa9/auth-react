@@ -1,10 +1,7 @@
-
 import React from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import Userhome from '../pages/Userhome'
-import Sign from '../pages/Sign'
-
-
+import Header from '../components/header'
 
 const UserLayout = () => {
     let routes = <>
@@ -16,6 +13,7 @@ const UserLayout = () => {
     </>
     return (
         <>
+        <Header/>
             <Routes>
                 {routes}
             </Routes>

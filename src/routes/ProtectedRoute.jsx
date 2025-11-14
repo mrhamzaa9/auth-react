@@ -26,4 +26,4 @@ function ProtectedRoute () {
 }
 
 export default ProtectedRoute
-
+//in layout we not make protected route

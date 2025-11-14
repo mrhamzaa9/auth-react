@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "./context/isauth";
+import { useAuth } from "./context/Isauth";
 import PublicRoute from "./routes/PublicRoute";
 import AdminLayout from "./layout/AdminLayout";
 import UserLayout from "./layout/UserLayout";

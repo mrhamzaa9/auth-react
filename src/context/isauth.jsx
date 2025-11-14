@@ -6,12 +6,13 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
+  useEffect(() => {
+    // if i not not remove the local it assume user true 
+    localStorage.removeItem("user");
+    setUser(null);
+    setLoading(false);
+  }, []);
   
-  localStorage.removeItem("user");
-  setUser(null);
-  setLoading(false);
-}, []);
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
@@ -19,6 +20,7 @@ useEffect(() => {
 
   const logout = () => {
     setUser(null);
+
     localStorage.removeItem("user");
   };
 

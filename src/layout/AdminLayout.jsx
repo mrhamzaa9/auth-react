@@ -1,10 +1,7 @@
 import React from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
-
 import AdminHome from '../pages/AdminHome'
-import Userhome from '../pages/Userhome'
-
-
+import Header from '../components/header'
 const AdminLayout = () => {
     let routes = <>
         <Route path='/adminhome' element={< AdminHome />} />
@@ -15,11 +12,10 @@ const AdminLayout = () => {
     </>
     return (
         <>
-   
-                <Routes>
+        <Header/>
+            <Routes>
                 {routes}
             </Routes>
-          
         </>
     )
 }
