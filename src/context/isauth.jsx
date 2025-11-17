@@ -8,10 +8,15 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // if i not not remove the local it assume user true 
-    localStorage.removeItem("user");
+    // localStorage.removeItem("user");
     setUser(null);
     setLoading(false);
   }, []);
+
+
+  useEffect(()=>{
+    
+  },[])
   
   const login = (userData) => {
     setUser(userData);

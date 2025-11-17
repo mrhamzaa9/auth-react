@@ -142,7 +142,7 @@ export default function Sign() {
         </button>
 
         <div className="text-center mt-4">
-          <Link to="/" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Already have an account? Login
           </Link>
         </div>

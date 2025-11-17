@@ -10,7 +10,7 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
 
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold">
+        <Link to="/home" className="text-2xl font-bold">
           MyApp
         </Link>
 
@@ -18,7 +18,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
 
           <NavLink
-            to="/"
+            to="/home"
             className={({ isActive }) =>
               isActive ? "font-semibold underline" : ""
             }
@@ -38,11 +38,18 @@ export default function Header() {
           {user && (
             <>
               {user.role === "admin" && (
+                <>
                 <NavLink to="/adminhome">Admin</NavLink>
+                   <NavLink to="/login">Login</NavLink>
+          
+              </>
               )}
 
               {user.role === "user" && (
+                <>
                 <NavLink to="/userhome">User</NavLink>
+                   <NavLink to="/login">Login</NavLink>
+                   </>
               )}
 
               <button

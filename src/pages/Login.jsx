@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Isauth";
 import Swal from "sweetalert2"; // ✅ import SweetAlert2
 import APIURL from "../config";
@@ -38,7 +38,7 @@ export default function Login() {
       }
 
       // ✅ Save role in context
-      login({ role: result.role });
+      login( result);
       reset();
 
       // ✅ SweetAlert success notification
@@ -120,15 +120,15 @@ export default function Login() {
               : "bg-blue-500 hover:bg-blue-600"
           }`}
         >
-          {isSubmitting ? "Logging in..." : "Login"}
+         SUBMIT
         </button>
 
         {/* Signup Link */}
         <p className="text-center mt-4">
-          Don’t have an account?{" "}
-          <a href="/sign" className="text-blue-500 hover:underline">
+          Don’t have an account?
+          <Link to="/sign" className="text-blue-500 hover:underline">
             Sign Up
-          </a>
+          </Link>
         </p>
       </form>
     </div>

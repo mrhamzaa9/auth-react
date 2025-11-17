@@ -6,17 +6,17 @@ import Home from '../pages/Home'
 
 const UserLayout = () => {
     let routes = <>
- <Route path='/userhome' element={< Userhome />} />
- <Route path='/home' element={< Home />} />
-   
+        <Route path='/userhome' element={< Userhome />} />
+        <Route path='/home' element={< Home />} />
+
         <Route path='*'
             element={
-                <Navigate to={"/"} replace/>
+                <Navigate to={"/"} replace />
             } />
     </>
     return (
         <>
-   
+
             <Routes>
                 {routes}
             </Routes>
