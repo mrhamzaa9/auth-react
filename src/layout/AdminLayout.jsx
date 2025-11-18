@@ -10,7 +10,7 @@ const AdminLayout = () => {
     
         <Route path='*'
             element={
-                <Navigate to={"/"} />
+                <Navigate to={"/adminhome"} />
             } />
     </>
     return (

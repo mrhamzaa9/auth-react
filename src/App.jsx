@@ -14,35 +14,34 @@ function App() {
 
 
 
- 
-  useEffect(() => {   
+
+  useEffect(() => {
     console.log("Authenticated", Authenticated, "role", user?.role)
   }, [Authenticated, user])
   // if (!isAuthenticated) {
   //   return <PublicRoute />;
   // }
- if (loading) return <div><Spinner/></div>;
+  if (loading) return <div><Spinner /></div>;
   return (
     <>
-      <Navbar/>
-     <div className="min-h-[80vh]">
-      {Authenticated ?(
-        role === "admin" ? (
-          <>
-        <Routes>
-            <Route path="/*" element={<AdminLayout />} />
-            </Routes>
-          </>
-        ) : (
-          <>
-            <Routes>
-            <Route path="/*" element={<UserLayout />} />
-            </Routes>
-          </>
-        )) : (<PublicRoute />)}
-      {/* // <Route path="*" element={<Navigate to="/" />} /> */}
+      <Navbar />
+      <div className="min-h-[80vh]">
+        {Authenticated ? (
+          role === "admin" ? (
+            <>
+              <Routes>
+                <Route path="/*" element={<AdminLayout />} />
+              </Routes>
+            </>
+          ) : (
+            <>
+              <Routes>
+                <Route path="/*" element={<UserLayout />} />
+              </Routes>
+            </>
+          )) : (<PublicRoute />)}
       </div>
-     <Foter />
+      <Foter />
     </>
   );
 }
