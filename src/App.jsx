@@ -9,15 +9,15 @@ import Footer from "./components/footer";
 import { Spinner } from "react-bootstrap";
 
 function App() {
-  const { isAuthenticated, user, loading } = useAuth();
+  const { Authenticated, user, loading } = useAuth();
   const role = user?.role || localStorage.getItem("role");
 
 
 
  
   useEffect(() => {   
-    console.log("isAuthenticated", isAuthenticated, "role", user?.role)
-  }, [isAuthenticated, user])
+    console.log("Authenticated", Authenticated, "role", user?.role)
+  }, [Authenticated, user])
   // if (!isAuthenticated) {
   //   return <PublicRoute />;
   // }
@@ -26,7 +26,7 @@ function App() {
     <>
       <Header />
      <div className="min-h-[80vh]">
-      {isAuthenticated ?(
+      {Authenticated ?(
         role === "admin" ? (
           <>
         <Routes>

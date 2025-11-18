@@ -39,17 +39,14 @@ export default function Header() {
             <>
               {user.role === "admin" && (
                 <>
-                <NavLink to="/adminhome">Admin</NavLink>
-                   <NavLink to="/login">Login</NavLink>
-          
-              </>
+                  <NavLink to="/adminhome">Admin</NavLink>
+                </>
               )}
 
               {user.role === "user" && (
                 <>
-                <NavLink to="/userhome">User</NavLink>
-                   <NavLink to="/login">Login</NavLink>
-                   </>
+                  <NavLink to="/userhome">User</NavLink>
+                </>
               )}
 
               <button
