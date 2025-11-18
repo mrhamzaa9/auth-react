@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/Auth";
 
-export default function Header() {
+export default function Navbar() {
   const { user, logout } = useAuth();
 
   return (

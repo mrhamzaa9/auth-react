@@ -4,10 +4,10 @@ import { useAuth } from "./context/Auth";
 import PublicRoute from "./routes/PublicRoute";
 import AdminLayout from "./layout/AdminLayout";
 import UserLayout from "./layout/UserLayout";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import { Spinner } from "react-bootstrap";
 
+import { Spinner } from "react-bootstrap";
+import Navbar from "./components/Navbar";
+import Foter from "./components/Foter"
 function App() {
   const { Authenticated, user, loading } = useAuth();
   const role = user?.role || localStorage.getItem("role");
@@ -24,7 +24,7 @@ function App() {
  if (loading) return <div><Spinner/></div>;
   return (
     <>
-      <Header />
+      <Navbar/>
      <div className="min-h-[80vh]">
       {Authenticated ?(
         role === "admin" ? (
@@ -42,7 +42,7 @@ function App() {
         )) : (<PublicRoute />)}
       {/* // <Route path="*" element={<Navigate to="/" />} /> */}
       </div>
-     <Footer />
+     <Foter />
     </>
   );
 }
