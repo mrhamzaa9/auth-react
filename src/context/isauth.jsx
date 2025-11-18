@@ -9,18 +9,13 @@ export const AuthProvider = ({ children }) => {
     return saved ? JSON.parse(saved) : null;
   });
 
+
   const [Authenticated, setAuthenticated] = useState(false);
-
-  useEffect(()=>{
-    if(localStorage.getItem("user")){
-      setAuthenticated(true)
-    }
-  },[Authenticated])
-
+   useEffect(()=>{ if(localStorage.getItem("user")){ setAuthenticated(true) } },[Authenticated])
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(false); 
+    setLoading(false);
   }, []);
 
   const login = (userData) => {
