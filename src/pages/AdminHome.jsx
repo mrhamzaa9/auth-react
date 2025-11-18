@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Isauth";
-import APIURL from "../config";
+import  { API_URL } from "../config";
 import { MdOutlineDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 
@@ -12,8 +12,9 @@ export default function Adminhome() {
 
   const [users, setUsers] = useState([]);
 
+
   useEffect(() => {
-    fetch(`${APIURL}/get`, { credentials: "include", method: "GET" })
+    fetch(`${API_URL}/get`, { credentials: "include", method: "GET" })
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
@@ -31,7 +32,7 @@ export default function Adminhome() {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:3000/user/delete/${id}`, {
+        const res = await fetch(`${API_URL}/delete/${id}`, {
           method: "DELETE",
           credentials: "include",
         });

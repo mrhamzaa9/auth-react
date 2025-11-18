@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2"
-import APIURL from "../config";
+import {API_URL} from "../config";
 
 export default function Sign() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function Sign() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch(`${APIURL}/sign`, {
+      const res = await fetch(`${API_URL}/sign`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

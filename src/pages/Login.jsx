@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Isauth";
 import Swal from "sweetalert2"; // ✅ import SweetAlert2
-import APIURL from "../config";
+import  { API_URL } from "../config";
 
 export default function Login() {
   const { login } = useAuth();
@@ -18,7 +18,7 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch(`${APIURL}/login`, {
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
