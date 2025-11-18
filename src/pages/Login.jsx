@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/Isauth";
+import { useAuth } from "../context/Auth";
 import Swal from "sweetalert2"; // ✅ import SweetAlert2
 import  { API_URL } from "../config";
 

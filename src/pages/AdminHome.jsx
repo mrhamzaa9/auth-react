@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/Isauth";
+import { useAuth } from "../context/Auth";
 import  { API_URL } from "../config";
 import { MdOutlineDelete } from "react-icons/md";
 import Swal from "sweetalert2";
